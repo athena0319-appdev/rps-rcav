@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  layout(false)
+  layout("wrapper.html.erb")
 
   # Add your actions below this line
   # ================================
@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     elsif @comp_move == "scissors"
       @outcome="We won!"
     end
-    render({:template=>"game_templates/user_rock.html.erb"})
+    render({:template=>"game_templates/user_rock.html.erb", :layout=>"wrapper.html.erb"})
     #redirect_to("https://www.wikipedia.org")
   end
 
